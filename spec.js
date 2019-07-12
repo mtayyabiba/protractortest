@@ -4,7 +4,7 @@ describe('mutliple elements', function(){
     var secondNumber = element(by.model('second'));
 
     var gobutton = element(by.id('gobutton'));
-    var resultText = element(by.className('ng-binding'));
+    var resultText = element(by.xpath('/html/body/div/div/form/h2'));
 
 
 
@@ -25,6 +25,6 @@ describe('mutliple elements', function(){
 
     it('should read value from input field', function(){
         firstNumber.sendKeys(1);
-        expect(resultText.getAttribute()).toEqual('1');
+        expect(firstNumber.getAttribute('value')).toEqual('1');
     });
 });
